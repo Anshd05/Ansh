@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome | Ansh</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <nav class="navbar">
+         <img src="sjcem-removebg-preview.png">
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li class="dropdown">
+                <a href="#achievements">Achivements</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#achievements">Education</a></li>
+                    <li><a href="#achievements">Sports</a></li>
+                    <li><a href="#achievements">Social-Media</a></li>
+                    <li><a href="#achievements">Online-Game</a></li>
+                </ul>
+            </li>
+            <li><a href="#goals">Future Goal</a></li>
+            <li><a href="#personal-section">Personal Side</a></li>
+            <li><a href="#footer">Technical Side</a></li>
+            <!-- <button class="btn">Get Start</button> -->
+
+        </ul>
+
+    </nav>
+    <section class="welcome-section">
+        <div class="content">
+            <h1>Hi, I'm <span>Ansh Dabholkar</span> 👋</h1>
+            <p>Welcome to web development—where creativity meets code to build amazing digital experiences! 🚀.</p>
+
+            <div class="media">
+                <img src="Ansh.jpeg" alt="Photo of Your Name" class="profile-photo" />
+
+                <!-- Optional Video Introduction -->
+                <video class="intro-video" controls>
+          <source src="Intr1-1.mp4" type="video/mp4"/>
+          Your browser does not support the video tag.
+        </video>
+            </div>
+        </div>
+    </section>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="Ansh1.jpeg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>
+                        I am Ansh Ganesh Dabholkar.I completed my diploma from pravin Patil College of Diploma Engineering and technology and now 
+                        I am Pursing Electronic and Computer Science Engineering at St.John Collage Of Engineering and Mangement. and now professionaly
+                        i am looking for internship for experience
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills', event)">Name/Location</p>
+                        <p class="tab-links" onclick="opentab('experience', event)">Education</p>
+                        <p class="tab-links" onclick="opentab('education', event)">Language Known</p>
+
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Name</span><br>Ansh Ganesh Dabholkar</li>
+                            <li><span>Location</span><br>Virar (W) </li>
+                            <li><span>Landmark </span><br>Gokul township</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Diploma</span><br>Pravin Patil Collage</li>
+                            <li><span>Computer Engineering Diploma</span><br>Pravin Patil College</li>
+                            <li><span>Electronics and Computer Science Engineering</span><br>Degree at St.John Collage Of Engineering and Mangement</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>English</span><br>Advanced</li>
+                            <li><span>Marathi</span><br> Advanced</li>
+                            <li><span>Hindhi</span><br>Advanced</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="achievements">
+        <h2 style="text-align: center; font-weight: 800;">My Achievements</h2>
+        <div class="achievement-container">
+
+            <div class="achievement-box">
+                <img src="college.png" alt="Education Achievement">
+                <h3>Education</h3>
+                <p>Completedf Diploma in Computer Engineering with Distinction.</p>
+            </div>
+
+            <div class="achievement-box">
+                <img src="sports.png" alt="Sports Achievement">
+                <h3>Sports</h3>
+                <p>Won 2nd in  Chess Championship 2022.</p>
+            </div>
+
+            <div class="achievement-box">
+                <img src="carrom.png" alt="Social Media Achievement">
+                <h3>Social Media</h3>
+                <p>won 3rd in Carrom Championship.</p>
+            </div>
+
+            <div class="achievement-box">
+                <img src="online games.png" alt="Gaming Achievement">
+                <h3>Online Gaming</h3>
+                <p>Likes to play and watch live streams of BGMI,RDR2,GTA5 and many more.</p>
+            </div>
+
+        </div>
+    </section>
+    <section id="goals">
+        <h2 style="text-align: center; font-weight: 800;">My Future Goals</h2>
+        <div class="goal-container">
+
+            <div class="goal-box">
+                <img src="graduate.png" alt="Graduate">
+                <h3>Graduate Successfully</h3>
+                <p>Main goal is to graduate in  B.Tech in Computer Science with excellent grades.</p>
+            </div>
+
+            <div class="goal-box">
+                <img src="cyber security.png" alt="Learn AI">
+                <h3>Master Cyber security</h3>
+                <p>Compete real world for findinf threats on their devices.</p>
+            </div>
+
+            <div class="goal-box">
+                <img src="help.png" alt="Help People">
+                <h3>Help People</h3>
+                <p>Helping people in difficult situation.</p>
+            </div>
+
+            <div class="goal-box">
+                <img src="intern.jpg" alt="Internship">
+                <h3>Get Internship</h3>
+                <p>Work with leading tech firms to gain hands-on experience.</p>
+            </div>
+
+            <div class="goal-box">
+                <img src="c-s1.png" alt="Learn Cybersecurity">
+                <h3>Learn Cybersecurity</h3>
+                <p>protect system from hackers.</p>
+            </div>
+
+            <div class="goal-box">
+                <img src="hack.png" alt="Hackathon">
+                <h3>Win a Hackathon</h3>
+                <p>Participate in various coding competitions and win a national hackathon to gain experience.</p>
+            </div>
+
+
+            <div class="goal-box">
+                <img src="certification.jpg" alt="Certifications">
+                <h3>Earn Certifications</h3>
+                <p>Achieve globally recognized tech certifications (AWS, Google Cloud, etc.).</p>
+            </div>
+
+        </div>
+
+        <section id="personal-section">
+            <h2 style="text-align: center; font-weight: 800;">My Personal Side</h2>
+            <div class="card-container">
+
+                <!-- Hobbies -->
+                <div class="card">
+                    <img src="hobbies.webp" alt="Hobbies">
+                    <h3>My Hobbies</h3>
+                    <ul>
+                        <li><strong>Coding:</strong> I enjoy building things and solving challenges.</li>
+                        <li><strong>Sketching:</strong> Helps me relax and express creativity.</li>
+                        <li><strong>Gaming:</strong> Boosts my reflexes and focus.</li>
+                        <li><strong>Reading:</strong> Enhances my knowledge and imagination.</li>
+                    </ul>
+                </div>
+
+                <!-- Role Model -->
+                <div class="card">
+                    <img src="drabj.webp" alt="Role Model">
+                    <h3>My Role Model</h3>
+                    <p><strong>Dr. A.P.J. Abdul Kalam</strong> – A brilliant scientist and inspirational leader who rose from humble beginnings to become the President of India. His words and actions inspire me to dream big and stay humble.</p>
+                </div>
+
+                <!-- Favorite Book -->
+                <div class="card">
+                    <img src="favbook.jpg" alt="Favorite Book">
+                    <h3>Favorite Book</h3>
+                    <p><strong>“Atomic Habits” by James Clear</strong> – This book taught me how small changes in daily routine can lead to remarkable success over time.</p>
+                </div>
+
+                <!-- Favorite Website -->
+                <div class="card">
+                    <img src="greekofgreeks.webp" alt="Favorite Website">
+                    <h3>Favorite Website</h3>
+                    <p><strong>GeeksforGeeks</strong> – A great learning platform for coding, problem-solving, and technical interview preparation. I visit it daily!</p>
+                </div>
+
+                <!-- Favorite Startup -->
+                <div class="card">
+                    <img src="spacex.jpg" alt="Favorite Startup">
+                    <h3>Favorite Startup</h3>
+                    <p><strong>SpaceX</strong> – Elon Musk’s innovative space company that inspires me to think beyond limits and explore impossible ideas.</p>
+                </div>
+
+                <!-- Volunteering -->
+                <div class="card">
+                    <img src="ngo.webp" alt="Volunteering">
+                    <h3>Volunteering Experience</h3>
+                    <p>I volunteered with a local NGO to teach underprivileged kids basic computer skills. It was a rewarding experience that made me more empathetic and socially aware.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </section>
+    <footer id="footer">
+        <div class="footer-content">
+            <h3>Connect with Me</h3>
+            <p>Let's build something amazing together! Follow me on social platforms below.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/" target="_blank"><img src="linkkdln.jpg" alt="LinkedIn"></a>
+                <a href="https://github.com/" target="_blank"><img src="github.png" alt="GitHub"></a>
+                <a href="https://twitter.com/" target="_blank"><img src="twitter.webp" alt="Twitter"></a>
+                <a href="https://instagram.com/" target="_blank"><img src="instagram.jpg" alt="Instagram"></a>
+            </div>
+            <p class="footer-bottom">© 2025 shubham chaugule | All Rights Reserved</p>
+        </div>
+    </footer>
+
+
+
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname, event) {
+            for (let tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (let tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+
+</body>
+
+</html>
