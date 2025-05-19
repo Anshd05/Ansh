@@ -1,0 +1,905 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #12df9b;
+}
+
+/* Navigation Bar */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #eded69;
+    padding: 15px 20px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 50px;
+}
+
+/* Navigation Links */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: #000;
+    text-decoration: none;
+    padding: 12px 20px;
+    display: block;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background: #dd590d;
+    border-radius: 5px;
+}
+
+/* Dropdown */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: #dd600d;
+    top: 100%;
+    left: 0;
+    width: 150px;
+    border-radius: 5px;
+    z-index: 999;
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background: #0cac31;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* ------------------------------ */
+
+/* ✅ Responsive Media Queries    */
+
+/* ------------------------------ */
+
+/* Tablet (768px and below) */
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+    .logo {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav-links li {
+        width: 100%;
+    }
+    .nav-links a {
+        padding: 10px 15px;
+        width: 100%;
+    }
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+    }
+}
+
+/* Mobile (480px and below) */
+
+@media screen and (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+    }
+    .nav-links a {
+        font-size: 16px;
+        padding: 10px 12px;
+    }
+    .dropdown-menu a {
+        padding: 8px 12px;
+        font-size: 15px;
+    }
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #2c2cb4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.welcome-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background: linear-gradient(to right, #efa53d, #f4e21d);
+}
+
+.content {
+    text-align: center;
+    max-width: 800px;
+}
+
+.content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.content h1 span {
+    color: #ca1414;
+}
+
+.content p {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #00796b;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.intro-video {
+    width: 100%;
+    max-width: 640px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* About Section */
+
+#about {
+    padding: 80px 0;
+    color: #ababab;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1 {
+    flex-basis: 35%;
+}
+
+.about-col-1 img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.about-col-2 {
+    flex-basis: 60%;
+}
+
+.sub-title {
+    font-size: 60px;
+    font-weight: 600;
+    color: #000;
+}
+
+.tab-titles {
+    display: flex;
+    margin: 20px 0 40px;
+    flex-wrap: wrap;
+}
+
+.tab-links {
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after {
+    width: 50%;
+}
+
+.tab-contents {
+    list-style: none;
+    margin: 10px 0;
+    display: none;
+}
+
+.tab-contents ul li span {
+    color: #ff004f;
+    font-size: 14px;
+}
+
+.tab-contents.active-tab {
+    display: block;
+}
+
+/* ---------------------------- */
+
+/* ✅ Responsive Media Queries  */
+
+/* ---------------------------- */
+
+/* Tablets (≤ 768px) */
+
+@media screen and (max-width: 768px) {
+    .content h1 {
+        font-size: 2.2rem;
+    }
+    .content p {
+        font-size: 1.2rem;
+    }
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+    .row {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .about-col-1,
+    .about-col-2 {
+        flex-basis: 100%;
+    }
+    .sub-title {
+        font-size: 40px;
+        text-align: center;
+    }
+    .tab-titles {
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+    .tab-links {
+        margin: 10px 20px;
+        font-size: 16px;
+    }
+}
+
+/* Mobile Phones (≤ 480px) */
+
+@media screen and (max-width: 480px) {
+    .content h1 {
+        font-size: 1.8rem;
+    }
+    .content p {
+        font-size: 1rem;
+    }
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+    .sub-title {
+        font-size: 30px;
+    }
+    .tab-links {
+        font-size: 15px;
+        margin: 8px 12px;
+    }
+    .intro-video {
+        max-width: 100%;
+    }
+    .tab-contents ul li span {
+        font-size: 12px;
+    }
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+.achievements {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #ffffff;
+}
+
+.achievements h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.achievement-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.achievement-box {
+    background: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    width: 250px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.achievement-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-box img {
+    width: 200px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.achievement-box:hover img {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.achievement-box h3 {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.achievement-box p {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* ------------------------------ */
+
+/* ✅ Responsive Media Queries    */
+
+/* ------------------------------ */
+
+/* Tablets (≤ 768px) */
+
+@media screen and (max-width: 768px) {
+    .achievements h2 {
+        font-size: 2rem;
+    }
+    .achievement-box {
+        width: 45%;
+        /* 2 items per row */
+    }
+    .achievement-box img {
+        width: 100%;
+        height: auto;
+    }
+    .achievement-box h3 {
+        font-size: 1rem;
+    }
+    .achievement-box p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile Phones (≤ 480px) */
+
+@media screen and (max-width: 480px) {
+    .achievements h2 {
+        font-size: 1.6rem;
+    }
+    .achievement-box {
+        width: 100%;
+        /* full width */
+    }
+    .achievement-box h3 {
+        font-size: 1rem;
+    }
+    .achievement-box p {
+        font-size: 0.85rem;
+    }
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==================== Goals Section ==================== */
+
+.goals {
+    background-color: #e0f7ff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.goals h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #007acc;
+}
+
+.goal-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.goal-box {
+    background-color: #ffffff;
+    border: 2px solid #b3e5fc;
+    border-radius: 15px;
+    width: 250px;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.goal-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.goal-box img {
+    width: 170px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.goal-box h3 {
+    font-size: 1.1rem;
+    color: #007acc;
+    margin-bottom: 10px;
+}
+
+.goal-box p {
+    font-size: 0.95rem;
+    color: #444;
+}
+
+/* ==================== Achievements Section ==================== */
+
+.achievements {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #ffffff;
+}
+
+.achievements h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.achievement-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.achievement-box {
+    background: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    width: 250px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.achievement-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-box img {
+    width: 200px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.achievement-box:hover img {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.achievement-box h3 {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.achievement-box p {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* ==================== Media Queries ==================== */
+
+/* Tablets (≤ 768px) */
+
+@media screen and (max-width: 768px) {
+    .goals h2,
+    .achievements h2 {
+        font-size: 2rem;
+    }
+    .goal-box,
+    .achievement-box {
+        width: 45%;
+        /* Two columns */
+    }
+    .goal-box h3,
+    .achievement-box h3 {
+        font-size: 1rem;
+    }
+    .goal-box p,
+    .achievement-box p {
+        font-size: 0.9rem;
+    }
+    .goal-box img,
+    .achievement-box img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Mobile Phones (≤ 480px) */
+
+@media screen and (max-width: 480px) {
+    .goals h2,
+    .achievements h2 {
+        font-size: 1.6rem;
+    }
+    .goal-box,
+    .achievement-box {
+        width: 100%;
+        /* Full width on small screens */
+    }
+    .goal-box h3,
+    .achievement-box h3 {
+        font-size: 1rem;
+    }
+    .goal-box p,
+    .achievement-box p {
+        font-size: 0.85rem;
+    }
+    .goal-box img,
+    .achievement-box img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background: #f0f9ff;
+}
+
+/* =================== Personal Section =================== */
+
+.personal-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #e0f7ff;
+}
+
+.personal-section h2 {
+    font-size: 2.8rem;
+    color: #007acc;
+    margin-bottom: 40px;
+    animation: pulseGlow 3s infinite;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card {
+    background: #ffffff;
+    border: 2px solid #b3e5fc;
+    border-radius: 20px;
+    width: 300px;
+    padding: 25px;
+    text-align: left;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeSlideUp 1s ease both;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    width: 260px;
+    height: 250px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    color: #007acc;
+    margin-bottom: 10px;
+}
+
+.card p,
+.card li {
+    color: #444;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+.card ul {
+    padding-left: 20px;
+}
+
+/* =================== Animations =================== */
+
+@keyframes fadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseGlow {
+    0% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #00f2ff, 0 0 15px #00f2ff;
+    }
+    50% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #00f2ff, 0 0 30px #00f2ff;
+    }
+    100% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #00f2ff, 0 0 15px #00f2ff;
+    }
+}
+
+/* =================== Responsive Media Queries =================== */
+
+/* Tablets (≤ 768px) */
+
+@media screen and (max-width: 768px) {
+    .personal-section h2 {
+        font-size: 2.2rem;
+    }
+    .card {
+        width: 80%;
+    }
+    .card img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Mobile Phones (≤ 480px) */
+
+@media screen and (max-width: 480px) {
+    .personal-section {
+        padding: 40px 10px;
+    }
+    .personal-section h2 {
+        font-size: 1.8rem;
+    }
+    .card {
+        width: 100%;
+        padding: 20px;
+    }
+    .card h3 {
+        font-size: 1.2rem;
+    }
+    .card p,
+    .card li {
+        font-size: 0.9rem;
+    }
+    .card img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* ========== Footer Styles ========== */
+
+#footer {
+    background-color: #007acc;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+    border-top: 5px solid #b3e5fc;
+    animation: fadeSlideUp 1s ease forwards;
+    opacity: 0;
+    animation-delay: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.footer-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    animation: pulseGlow 3s infinite;
+}
+
+.footer-content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-icons a {
+    display: inline-block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2);
+    filter: brightness(1) invert(0.8);
+    box-shadow: 0 0 10px #fff, 0 0 20px #00f2ff;
+}
+
+.footer-bottom {
+    font-size: 0.9rem;
+    opacity: 0.85;
+    margin-top: 15px;
+}
+
+/* ========== Animations ========== */
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseGlow {
+    0% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #00f2ff, 0 0 15px #00f2ff;
+    }
+    50% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #00f2ff, 0 0 30px #00f2ff;
+    }
+    100% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #00f2ff, 0 0 15px #00f2ff;
+    }
+}
+
+/* ========== Media Queries ========== */
+
+/* Tablets (≤ 768px) */
+
+@media screen and (max-width: 768px) {
+    .footer-content h3 {
+        font-size: 1.5rem;
+    }
+    .footer-content p {
+        font-size: 0.95rem;
+    }
+    .social-icons img {
+        width: 35px;
+        height: 35px;
+    }
+    .footer-bottom {
+        font-size: 0.85rem;
+    }
+}
+
+/* Mobile Phones (≤ 480px) */
+
+@media screen and (max-width: 480px) {
+    #footer {
+        padding: 30px 15px;
+    }
+    .footer-content h3 {
+        font-size: 1.3rem;
+    }
+    .footer-content p {
+        font-size: 0.9rem;
+    }
+    .social-icons {
+        gap: 15px;
+    }
+    .social-icons img {
+        width: 30px;
+        height: 30px;
+    }
+    .footer-bottom {
+        font-size: 0.8rem;
+    }
+}
