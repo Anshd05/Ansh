@@ -237,22 +237,131 @@
             </div>
 
           <!-- Contact Section -->
-  <section id="contact" class="max-w-4xl mx-auto my-12 p-6 bg-white rounded-lg shadow-md" data-aos="fade-up">
-    <h2 class="text-2xl font-bold text-center mb-4">Contact Me</h2>
-    <p>📞 <a href="tel:917058391679" class="text-blue-600 underline">+917058391679</a></p>
-    <p>💬 <a href="https://wa.me/917058391679" class="text-green-600 underline">Chat on WhatsApp</a></p>
-    <p>✉️ <a href="mailto:ansh.dabholkar@gmail.com" class="text-red-600 underline">ansh.dabholkar@gmail.com</a></p>
-    <p>📍 <iframe src="https://www.google.com/maps?q=Virar,Maharashtra&output=embed" width="100%" height="200" style="border:0;" allowfullscreen=""></iframe></p>
-    <p class="mt-4">🌐 <a href="https://github.com/Anshd05" class="underline">GitHub</a> |
-       <a href="https://www.linkedin.com/in/ansh-dabholkar/" class="underline">LinkedIn</a> |
-       <a href="https://www.instagram.com/anshdofficial1705_/?next=%2F" class="underline">Instagram</a></p>
-    <form action="https://formspree.io/f/yourformid" method="POST" class="mt-6 flex flex-col gap-4">
-      <input type="text" name="name" placeholder="Your Name" required class="border p-2 rounded-md" />
-      <input type="email" name="_replyto" placeholder="Your Email" required class="border p-2 rounded-md" />
-      <textarea name="message" placeholder="Your Message" required class="border p-2 rounded-md"></textarea>
-      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-800">Send</button>
-    </form>
-  </section>
+  section id="contact" class="bg-gray-100 py-12 px-4">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-8">Contact Me</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <!-- Contact Info -->
+      <div class="space-y-6 text-lg text-gray-700">
+        <!-- Phone -->
+        <div>
+          <span class="font-semibold">📞 Phone:</span>
+          <a href="tel:+917058391679" class="text-blue-600 hover:underline block">+91 7058391679</a>
+        </div>
+
+        <!-- WhatsApp -->
+        <div>
+          <span class="font-semibold">💬 WhatsApp:</span>
+          <a href="https://wa.me/7058391679" target="_blank" class="text-green-600 hover:underline block">
+            Click to Chat on WhatsApp
+          </a>
+        </div>
+
+        <!-- Email -->
+        <div>
+          <span class="font-semibold">📧 Email:</span>
+          <a href=" ansh.dabholkar@gmail.com" class="text-red-600 hover:underline block">
+           ansh.dabholkar@gmail.com
+          </a>
+        </div>
+
+        <!-- Location -->
+        <div>
+          <span class="font-semibold">📍 Location:</span>
+          <p>Virar, Maharashtra, India</p>
+        </div>
+      </div>
+
+      <!-- Google Map Embed -->
+      <div class="w-full h-64 md:h-full">
+        <iframe
+          class="w-full h-full rounded-xl shadow-md"
+          src="https://www.google.com/maps/place/Gokul+Twp,+Virar+West,+Virar,+Maharashtra+401303,+India/@19.4485757,72.7822374,15z/data=!3m1!4b1!4m6!3m5!1s0x3be7aa2b89104a1d:0xf33f4cf9aa777ea3!8m2!3d19.4498886!4d72.7998479!16s%2Fg%2F1vxdwrph?hl=en-US&entry=ttu&g_ep=EgoyMDI1MDUxNS4wIKXMDSoASAFQAw%3D%3D7"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="py-12 px-4 bg-white">
+  <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-blue-700 mb-8">Contact Me</h2>
+
+  <form 
+    id="contactForm" class="max-w-2xl mx-auto bg-gray-50 p-6 rounded-xl shadow-md space-y-6" action="https://formspree.io/f/your-form-id" 
+    method="POST" 
+    class="max-w-2xl mx-auto bg-gray-50 p-6 rounded-xl shadow-md space-y-6"
+  >
+    <div>
+      <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+      <input 
+        type="text" 
+        id="name" 
+        name="name" 
+        required 
+        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+    </div>
+
+    <div>
+      <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+      <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        required 
+        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+    </div>
+
+    <div>
+      <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+      <textarea 
+        id="message" 
+        name="message" 
+        rows="5" 
+        required 
+        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+      ></textarea>
+    </div>
+
+    <div class="text-center">
+      <button 
+        type="submit" 
+        class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-200"
+      >
+        Send Message
+      </button>
+    </div>
+  </form>
+</section>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent default form submission
+
+    // Collect form data
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // Log data (you can replace this with API call or service)
+    console.log("Form Data Submitted:");
+    console.log("Name:", name);
+    console.log("Email:", email);
+    console.log("Message:", message);
+
+    // Optional: Alert user
+    alert("Thanks! Your message has been received.");
+
+    // Optional: Clear form
+    this.reset();
+  });
+</script>
             <p class="footer-bottom">© 2025 Ansh Dabholkar | All Rights Reserved</p>
         </div>
     </footer>
