@@ -1,0 +1,36 @@
+{
+  "section": {
+    "id": "achievements",
+    "title": "My Achievements",
+    "style": {
+      "textAlign": "center",
+      "fontWeight": "800"
+    },
+    "achievements": [
+      {
+        "image": "college.png",
+        "alt": "Education Achievement",
+        "title": "Education",
+        "description": "Completed Diploma in Computer Engineering with Distinction."
+      },
+      {
+        "image": "chess.png",
+        "alt": "Sports Achievement",
+        "title": "chess",
+        "description": "Won 2nd in  Chess Championship 2022."
+      },
+      {
+        "image": "carrom.png",
+        "alt": "Social Media Achievement",
+        "title": "Social Media",
+        "description": "won 3rd in Carrom Championship."
+      },
+      {
+        "image": "online games.png",
+        "alt": "Gaming Achievement",
+        "title": "Online Gaming",
+        "description": "Likes to play and watch live streams of BGMI,RDR2,GTA5 and many more."
+      }
+    ]
+  }
+}
