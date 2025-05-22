@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Electronics and Computer Science Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark-theme {
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1a237e;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar .brand {
+      font-size: 1.5rem;
+      color: #fff;
+      font-weight: 600;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .nav-links a:hover {
+      background-color: #3949ab;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin: 4px 0;
+    }
+    .theme-btn {
+      border: 2px solid #fff;
+      background: transparent;
+      color: #fff;
+      padding: 0.25rem 0.75rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+    .product-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    .product-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 1rem;
+      text-align: center;
+    }
+    .product-name {
+      font-weight: 600;
+      margin: 0.5rem 0;
+    }
+    .product-price {
+      color: #1a237e;
+      font-weight: 700;
+    }
+    .btn-add {
+      background-color: #1a237e;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn-add:hover {
+      background-color: #3949ab;
+    }
+
+    .cart-sidebar {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100%;
+      background: white;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+      transition: right 0.3s;
+      padding: 1rem;
+      z-index: 1000;
+    }
+    .cart-sidebar.open {
+      right: 0;
+    }
+    .cart-header {
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    .cart-item img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    .cart-item-name {
+      flex-grow: 1;
+      margin-left: 1rem;
+    }
+    .btn-remove {
+      background: transparent;
+      border: none;
+      color: #e53935;
+      cursor: pointer;
+    }
+    .cart-footer {
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+    .checkout-btn {
+      margin-top: 1rem;
+      width: 100%;
+      background-color: #3949ab;
+      color: white;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .footer {
+      background-color: #1a237e;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+    }
+    .footer a {
+      color: white;
+      margin: 0 1rem;
+    }
+
+    #cookie-consent {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #1a237e;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #1a237e;
+        width: 200px;
+        padding: 1rem;
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="brand">Electronics and Computer Science Shop</div>
+    <div class="nav-links" id="nav-links">
+  <a href="#">Home</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <a href="#terms">Terms</a>
+  <a href="#" id="cart-link">Cart</a>
+  <button class="theme-btn" id="theme-toggle">🌙</button>
+</div>
+    <div class="hamburger" id="hamburger">
+      <div></div><div></div><div></div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Trendy Tees for Everyone</h1>
+    <p>Explore our latest collection of stylish T-shirts!</p>
+  </section>
+
+  <section class="products" id="products-list"></section>
+
+  <aside class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">Shopping Cart</div>
+    <div id="cart-content">
+      <p>Your cart is empty.</p>
+    </div>
+    <div class="cart-footer">Total: $<span id="cart-total">0.00</span></div>
+    <button class="checkout-btn" onclick="location.href='checkout.html'">Checkout</button>
+  </aside>
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trendy Tees Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* [Your existing CSS stays here unchanged] */
+    /* Add this small checkout page style */
+    .checkout-page {
+      max-width: 600px;
+      margin: 2rem auto;
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .checkout-page h2 {
+      margin-bottom: 1rem;
+      color: #1a237e;
+    }
+    .payment-method {
+      margin-bottom: 1rem;
+    }
+    .payment-method input {
+      margin-right: 0.5rem;
+    }
+    .pay-btn {
+      background-color: #1a237e;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    .pay-btn:hover {
+      background-color: #3949ab;
+    }
+  </style>
+</head>
+<body>
+
+  
+
+  <section id="about" style="padding: 2rem; background-color: #eceff1;">
+  <h2>About Us</h2>
+  <p>Trendy Tees is your go-to destination for stylish, affordable, and high-quality T-shirts. We blend comfort with creativity to bring you unique pieces that fit every lifestyle. Our mission is to make fashion accessible and expressive for everyone.</p>
+</section>
+
+<section id="contact" style="padding: 2rem; background-color: #f5f5f5;">
+  <h2>Contact</h2>
+  <table style="width: 100%; max-width: 600px; margin-top: 1rem; border-collapse: collapse;">
+    <tr style="border-bottom: 1px solid #ccc;">
+      <td style="padding: 0.5rem; font-weight: bold;">Email</td>
+      <td style="padding: 0.5rem;"><a href="mailto:support@trendytees.com">support@trendytees.com</a></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #ccc;">
+      <td style="padding: 0.5rem; font-weight: bold;">Instagram</td>
+      <td style="padding: 0.5rem;"><a href="#">@trendytees</a></td>
+    </tr>
+    <tr style="border-bottom: 1px solid #ccc;">
+      <td style="padding: 0.5rem; font-weight: bold;">Twitter</td>
+      <td style="padding: 0.5rem;"><a href="#">@trendytees</a></td>
+    </tr>
+    <tr>
+      <td style="padding: 0.5rem; font-weight: bold;">Facebook</td>
+      <td style="padding: 0.5rem;"><a href="#">facebook.com/trendytees</a></td>
+    </tr>
+  </table>
+</section>
+
+
+<<section id="terms" style="padding: 2rem; background-color: #eceff1;">
+  <h2>Terms and Conditions</h2>
+  <p>By using our website and purchasing our products, you agree to our terms of service, return policies, and privacy practices. Please read them carefully. We reserve the right to make changes at any time.</p>
+
+  <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+    <li><strong>Product Availability:</strong> All products are subject to availability and we reserve the right to limit quantities or discontinue items at any time without notice.</li>
+    <li><strong>Pricing:</strong> Prices are subject to change without prior notice. Any discounts or promotional offers are valid only during the stated period.</li>
+    <li><strong>Payment:</strong> We accept payments via major credit/debit cards and secure online methods. Payment must be completed before order dispatch.</li>
+    <li><strong>Shipping:</strong> Orders are typically processed within 1–3 business days. Shipping times may vary based on your location and selected shipping method.</li>
+    <li><strong>Returns & Refunds:</strong> Items can be returned within 7 days of delivery, provided they are unused and in original condition. Some items may be non-refundable. Please check our Returns Policy.</li>
+    <li><strong>Account Responsibility:</strong> You are responsible for maintaining the confidentiality of your account credentials and for any activity that occurs under your account.</li>
+    <li><strong>Copyright:</strong> All content on this site (images, text, logo, etc.) is owned by Trendy Tees and may not be reused or reproduced without permission.</li>
+    <li><strong>Limitation of Liability:</strong> Trendy Tees is not liable for any indirect, incidental, or consequential damages resulting from the use or inability to use our products or website.</li>
+    <li><strong>Governing Law:</strong> These terms are governed by the laws of your country or region. Any disputes will be resolved in local courts.</li>
+  </ul>
+</section>
+
+
+  <footer class="footer">
+    <p>&copy; 2023 Trendy Tees. All rights reserved.</p>
+    <div>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Terms</a>
+    </div>
+  </footer>
+
+  <div id="cookie-consent">
+    <p>This website uses cookies to enhance the user experience. <a href="#">Learn more</a></p>
+    <button id="accept-cookies" style="background: #e53935; color: white; border: none; padding: 0.5rem 1rem; cursor: pointer;">Accept</button>
+  </div>
+
+  <script>
+    const products = [
+      { id: 1, name: 'Classic White Tee', price: 19.99, image: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=70' },
+      { id: 2, name: 'Young models with T-shirts (banner feel)', price: 24.99, image: 'https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=1600&q=80' },
+      { id: 3, name: 'Vintage Graphic Tee', price: 29.99, image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=70' },
+      { id: 4, name: 'Striped Summer Tee', price: 22.49, image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=400&q=70' },
+         ];
+    const cart = [];
+
+    const productsListEl = document.getElementById('products-list');
+    const cartSidebarEl = document.getElementById('cart-sidebar');
+    const cartContentEl = document.getElementById('cart-content');
+    const cartTotalEl = document.getElementById('cart-total');
+    const cartLinkEl = document.getElementById('cart-link');
+    const navLinksEl = document.getElementById('nav-links');
+    const hamburgerBtn = document.getElementById('hamburger');
+
+    function renderProducts() {
+      productsListEl.innerHTML = '';
+      products.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+          <img src="${product.image}" alt="${product.name}" class="product-image" />
+          <div class="product-info">
+            <h3 class="product-name">${product.name}</h3>
+            <div class="product-price">$${product.price.toFixed(2)}</div>
+            <button class="btn-add" data-id="${product.id}">Add to Cart</button>
+          </div>
+        `;
+        productsListEl.appendChild(card);
+      });
+    }
+
+    function updateCart() {
+      cartContentEl.innerHTML = '';
+      if (cart.length === 0) {
+        cartContentEl.innerHTML = '<p>Your cart is empty.</p>';
+        cartTotalEl.textContent = '0.00';
+        return;
+      }
+      let total = 0;
+      cart.forEach(item => {
+        const product = products.find(p => p.id === item.id);
+        total += product.price * item.quantity;
+        const cartItem = document.createElement('div');
+        cartItem.className = 'cart-item';
+        cartItem.innerHTML = `
+          <img src="${product.image}" alt="${product.name}" />
+          <div class="cart-item-name">${product.name} (x${item.quantity})</div>
+          <button class="btn-remove" data-id="${item.id}">&times;</button>
+        `;
+        cartContentEl.appendChild(cartItem);
+      });
+      cartTotalEl.textContent = total.toFixed(2);
+    }
+
+    function addToCart(id) {
+      const existingItem = cart.find(item => item.id === id);
+      if (existingItem) {
+        existingItem.quantity++;
+      } else {
+        cart.push({ id, quantity: 1 });
+      }
+      updateCart();
+    }
+
+    function removeFromCart(id) {
+      const index = cart.findIndex(item => item.id === id);
+      if (index !== -1) {
+        cart[index].quantity--;
+        if (cart[index].quantity === 0) {
+          cart.splice(index, 1);
+        }
+        updateCart();
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderProducts();
+      if (!getCookie('cookieConsent')) {
+        document.getElementById('cookie-consent').style.display = 'block';
+      }
+    });
+
+    productsListEl.addEventListener('click', e => {
+      if (e.target.classList.contains('btn-add')) {
+        const id = parseInt(e.target.dataset.id, 10);
+        addToCart(id);
+      }
+    });
+
+    cartContentEl.addEventListener('click', e => {
+      if (e.target.classList.contains('btn-remove')) {
+        const id = parseInt(e.target.dataset.id, 10);
+        removeFromCart(id);
+      }
+    });
+
+    cartLinkEl.addEventListener('click', e => {
+      e.preventDefault();
+      cartSidebarEl.classList.toggle('open');
+    });
+
+    hamburgerBtn.addEventListener('click', () => {
+      navLinksEl.classList.toggle('open');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!cartSidebarEl.contains(e.target) && !cartLinkEl.contains(e.target)) {
+        cartSidebarEl.classList.remove('open');
+      }
+    });
+
+    document.getElementById('accept-cookies').addEventListener('click', () => {
+      setCookie('cookieConsent', 'true', 30);
+      document.getElementById('cookie-consent').style.display = 'none';
+    });
+
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      document.body.classList.toggle('dark-theme');
+    });
+
+    function setCookie(name, value, days) {
+      const expires = new Date(Date.now() + days * 864e5).toUTCString();
+      document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/';
+    }
+
+    function getCookie(name) {
+      return document.cookie.split('; ').reduce((r, c) => {
+        const [key, v] = c.split('=');
+        return key === name ? decodeURIComponent(v) : r;
+      }, '');
+    }
+  </script>
+
+
+</body>
+</html>
